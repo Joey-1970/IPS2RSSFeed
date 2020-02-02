@@ -33,7 +33,7 @@
 		$arrayStatus[] = array("code" => 202, "icon" => "error", "caption" => "Kommunikationfehler!");
 				
 		$arrayElements = array(); 
-		$arrayElements[] = array("type" => "CheckBox", "name" => "Aktive", "caption" => "Aktiv");
+		$arrayElements[] = array("type" => "CheckBox", "name" => "Active", "caption" => "Aktiv");
 		$arrayElements[] = array("type" => "Label", "label" => "Anzahl der anzuzeigenden Nachrichten");
 		$arrayElements[] = array("type" => "IntervalBox", "name" => "MessageCount", "caption" => "Anzahl");
 		$arrayElements[] = array("type" => "Label", "label" => "Aktualisierung");
