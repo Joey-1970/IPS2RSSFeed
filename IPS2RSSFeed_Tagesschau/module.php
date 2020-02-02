@@ -15,6 +15,7 @@
             	// Diese Zeile nicht löschen.
             	parent::Create();
 		$this->RegisterPropertyBoolean("Active", false);
+		$this->RegisterPropertyInteger("MessageCount", 2);
 		$this->RegisterPropertyInteger("Timer_1", 10);
 		$this->RegisterTimer("Timer_1", 0, 'IPS2RSSFeedTagesschau_GetDataUpdate($_IPS["TARGET"]);');
 
@@ -33,6 +34,8 @@
 				
 		$arrayElements = array(); 
 		$arrayElements[] = array("type" => "CheckBox", "name" => "Aktive", "caption" => "Aktiv");
+		$arrayElements[] = array("type" => "Label", "label" => "Anzahl der anzuzeigenden Nachrichten");
+		$arrayElements[] = array("type" => "IntervalBox", "name" => "MessageCount", "caption" => "Anzahl");
 		$arrayElements[] = array("type" => "Label", "label" => "Aktualisierung");
 		$arrayElements[] = array("type" => "IntervalBox", "name" => "Timer_1", "caption" => "min");
 		$arrayElements[] = array("type" => "Label", "label" => "_____________________________________________________________________________________________________");
@@ -72,9 +75,11 @@
 	public function GetDataUpdate()
 	{
 		if ($this->ReadPropertyBoolean("Active") == true) {
+			$this->SendDebug("GetDataUpdate", "Ausfuehrung", 0);
 			// Feed einlesen
 			if( !$xml = simplexml_load_file('http://www.tagesschau.de/xml/rss2') ) {
-    				die('Fehler beim Einlesen der XML Datei!');
+    				$this->SendDebug("GetDataUpdate", "Fehler beim Einlesen der XML Datei!", 0);
+				return;
 			}
 
 			// Ausgabe Array
@@ -85,7 +90,8 @@
 
 			// Items vorhanden?
 			if( !isset($xml->channel[0]->item) ) {
-				die('Keine Items vorhanden!');
+				$this->SendDebug("GetDataUpdate", "Keine Items vorhanden!", 0);
+				return;
 			}
 
 			// Items holen
