@@ -1,0 +1,12 @@
+{
+  "id": "{E194B28B-FEEA-D4DF-13E1-47B334CD4E58}",
+  "author": "Joachim Päper",
+  "name": "IPS2RSSFeed",
+  "url": "www.ip-symcon.de",
+  "compatibility": {
+        "version": "5.1"
+  },
+  "version": "1.0",
+  "build": 0,
+  "date": 0
+}
