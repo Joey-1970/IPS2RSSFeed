@@ -1,6 +1,6 @@
 <?
     // Klassendefinition
-    class IPS2LANDevice extends IPSModule 
+    class IPS2RSSFeedTagesschau extends IPSModule 
     {
 	public function Destroy() 
 	{
@@ -14,52 +14,11 @@
         {
             	// Diese Zeile nicht löschen.
             	parent::Create();
-		$this->RegisterPropertyString("IP", "");
-		$this->RegisterPropertyString("MAC", "");
-		$this->RegisterPropertyString("Name", "");
-		$this->RegisterPropertyString("Location", "");
-		$this->RegisterPropertyBoolean("MultiplePing", false);
-		$this->RegisterPropertyInteger("MaxWaitTime", 100);
-		$this->RegisterPropertyInteger("Tries", 5);
-		$this->RegisterPropertyInteger("PortScanStart", 0);
-		$this->RegisterPropertyInteger("PortScanEnd", 49151);
 		$this->RegisterPropertyInteger("Timer_1", 10);
-		$this->RegisterTimer("Timer_1", 0, 'IPS2LANDevice_GetDataUpdate($_IPS["TARGET"]);');
-		$this->ConnectParent("{8A7D4A56-3D60-081E-AC65-D839FAC66611}");
-		
-		
-		// Profil anlegen
-		$this->RegisterProfileInteger("IPS2LAN.State", "Information", "", "", 0, 3, 1);
-		IPS_SetVariableProfileAssociation("IPS2LAN.State", 0, "Unbekannt", "Information", -1);
-		IPS_SetVariableProfileAssociation("IPS2LAN.State", 1, "Offline", "Close", 0xFF0000);
-		IPS_SetVariableProfileAssociation("IPS2LAN.State", 2, "Störung", "Alert", 0xFFFF00);
-		IPS_SetVariableProfileAssociation("IPS2LAN.State", 3, "Online", "Network", 0x00FF00);
-		
-		$this->RegisterProfileInteger("IPS2LAN.GUI", "Information", "", "", 0, 3, 1);
-		IPS_SetVariableProfileAssociation("IPS2LAN.GUI", 0, "Unbekannt", "Information", -1);
-		IPS_SetVariableProfileAssociation("IPS2LAN.GUI", 1, "Nein", "Close", 0xFF0000);
-		IPS_SetVariableProfileAssociation("IPS2LAN.GUI", 2, "Ja", "Notebook", 0x00FF00);
-		
-		$this->RegisterProfileFloat("IPS2LAN.ms", "Clock", "", " ms", 0, 1000, 0.001, 3);
-		
+		$this->RegisterTimer("Timer_1", 0, 'IPS2RSSFeedTagesschau_GetDataUpdate($_IPS["TARGET"]);');
+
 		// Status-Variablen anlegen		
-		$this->RegisterVariableInteger("LastUpdate", "Letztes Update", "~UnixTimestamp", 10);
-		IPS_SetIcon($this->GetIDForIdent("LastUpdate"), "Clock");
-		$this->RegisterVariableString("IP", "IP", "~HTMLBox", 20);
-		IPS_SetIcon($this->GetIDForIdent("IP"), "Internet");
-		$this->RegisterVariableString("Name", "Hostname", "~String", 30);
-		IPS_SetIcon($this->GetIDForIdent("Name"), "Information");
-		$this->RegisterVariableInteger("State", "Status", "IPS2LAN.State", 40);
-		$this->RegisterVariableString("Location", "Lokalisierung", "~String", 50);
-		IPS_SetIcon($this->GetIDForIdent("Location"), "Information");
-		$this->RegisterVariableInteger("SuccessRate", "Erfolgsqoute", "~Intensity.100", 60);
-		$this->RegisterVariableFloat("MinDuration", "Minimale Dauer", "IPS2LAN.ms", 70);
-		$this->RegisterVariableFloat("AvgDuration", "Durchschnittliche Dauer", "IPS2LAN.ms", 80);
-		$this->RegisterVariableFloat("MaxDuration", "Maximale Dauer", "IPS2LAN.ms", 90);
-		$this->RegisterVariableBoolean("WOL", "Wake-on-LAN", "~Switch", 100);
-		$this->RegisterVariableInteger("GUI", "GUI", "IPS2LAN.GUI", 110);
-		$this->RegisterVariableBoolean("OpenPorts", "Offene Ports Scan", "~Switch", 120);
-		$this->RegisterVariableString("OpenPortsResult", "Port Scan Ergebnis", "~TextBox", 130);
+		$this->RegisterVariableString("RSSFeed", "RSS-Feed Tagesschau", "~HTMLBox", 10);
 		
         }
  	
