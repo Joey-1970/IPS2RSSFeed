@@ -76,7 +76,7 @@
 	{
 		if ($this->ReadPropertyBoolean("Active") == true) {
 			$this->SendDebug("GetDataUpdate", "Ausfuehrung", 0);
-			$MessageCount = = $this->ReadPropertyInteger("MessageCount");
+			$MessageCount = $this->ReadPropertyInteger("MessageCount");
 			// Feed einlesen
 			if( !$xml = simplexml_load_file('http://www.tagesschau.de/xml/rss2') ) {
     				$this->SendDebug("GetDataUpdate", "Fehler beim Einlesen der XML Datei!", 0);
