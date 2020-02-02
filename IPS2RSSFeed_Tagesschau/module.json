@@ -1,0 +1,14 @@
+{
+  "id": "{E1A26CE7-9345-1EE9-33B2-CC7B266C8679}",
+  "name": "IPS2RSSFeed_Tagesschau",
+  "type": 3,
+  "vendor": "JP-IPS-Modules",
+  "aliases":
+  [
+    "IPS2RSSFeed_Tagesschau"
+  ],
+  "parentRequirements": [],
+  "childRequirements": [],
+  "implemented": [],
+  "prefix": "IPS2RSSFeed_Tagesschau"
+}
