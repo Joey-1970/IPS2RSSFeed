@@ -1,6 +1,6 @@
 <?
     // Klassendefinition
-    class IPS2RSSFeedTagesschau extends IPSModule 
+    class IPS2RSSFeed_Tagesschau extends IPSModule 
     {
 	public function Destroy() 
 	{
