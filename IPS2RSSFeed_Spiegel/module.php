@@ -104,17 +104,16 @@
 				$out[] = array(
 					'title'        => (string) $item->title,
 					'description'  => (string) $item->description,
-					'link'         => (string) $item->guid,
-					'date'         => date('d.m.Y H:i', strtotime((string) $item->pubDate)),
-        				'encoded_content'      => (string) $item->children('http://purl.org/rss/1.0/modules/content/')->encoded
-				);
+        				'image'        => (string) $item->enclosure['url']				);
 			}
 
 			$Result = "";
 			// Eintraege ausgeben
 			foreach ($out as $value) {
 				$Title = '<h3>'.$value['title'].'</h3>';
-				$Result = $Result.$Title.$value['encoded_content']."\r\n";
+    				$Discription = '<p>'.$value['description'].'</p>';
+    				$Image = '<img src='.$value['image'].'>';
+				$Result = $Result.$Title.$Discription.$Image."\r\n";
 			}
 			If ($Result <> GetValueString($this->GetIDForIdent("RSSFeed"))) {
 				SetValueString($this->GetIDForIdent("RSSFeed"), $Result);
