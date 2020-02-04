@@ -113,7 +113,8 @@
 			$Result = "";
 			// Eintraege ausgeben
 			foreach ($out as $value) {
-				$Result = $Result.$value['title'].$value['encoded_content']."\r\n";
+				$Title = '<h3>'.$value['title'].'</h3>';
+				$Result = $Result.$Title.$value['encoded_content']."\r\n";
 			}
 			If ($Result <> GetValueString($this->GetIDForIdent("RSSFeed"))) {
 				SetValueString($this->GetIDForIdent("RSSFeed"), $Result);
