@@ -78,7 +78,7 @@
 			$this->SendDebug("GetDataUpdate", "Ausfuehrung", 0);
 			$MessageCount = $this->ReadPropertyInteger("MessageCount");
 			// Feed einlesen
-			if( !$xml = simplexml_load_file('http://www.tagesschau.de/xml/rss2') ) {
+			if( !$xml = simplexml_load_file('https://www.spiegel.de/schlagzeilen/index.rss') ) {
     				$this->SendDebug("GetDataUpdate", "Fehler beim Einlesen der XML Datei!", 0);
 				return;
 			}
