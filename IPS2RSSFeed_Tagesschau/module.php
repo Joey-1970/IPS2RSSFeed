@@ -103,9 +103,6 @@
 
 				$out[] = array(
 					'title'        => (string) $item->title,
-					'description'  => (string) $item->description,
-					'link'         => (string) $item->guid,
-					'date'         => date('d.m.Y H:i', strtotime((string) $item->pubDate)),
         				'encoded_content'      => (string) $item->children('http://purl.org/rss/1.0/modules/content/')->encoded
 				);
 			}
