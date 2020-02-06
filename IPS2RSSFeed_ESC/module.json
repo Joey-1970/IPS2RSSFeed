@@ -1,0 +1,14 @@
+{
+  "id": "{6E9B5242-E211-15C0-8EE8-99420F39584B}",
+  "name": "IPS2RSSFeed_ESC",
+  "type": 3,
+  "vendor": "JP-IPS-Modules",
+  "aliases":
+  [
+    "IPS2RSSFeed_ESC"
+  ],
+  "parentRequirements": [],
+  "childRequirements": [],
+  "implemented": [],
+  "prefix": "IPS2RSSFeedESC"
+}
