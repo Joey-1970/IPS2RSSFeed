@@ -1,0 +1,14 @@
+{
+  "id": "{DB7D20DA-D81E-29E9-DA32-5EA7AD93F35F}",
+  "name": "IPS2RSSFeed_Postillion",
+  "type": 3,
+  "vendor": "JP-IPS-Modules",
+  "aliases":
+  [
+    "IPS2RSSFeed_Postillion"
+  ],
+  "parentRequirements": [],
+  "childRequirements": [],
+  "implemented": [],
+  "prefix": "IPS2RSSFeedPostillion"
+}
