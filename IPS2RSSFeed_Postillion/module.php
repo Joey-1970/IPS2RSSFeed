@@ -107,7 +107,6 @@
 				);
 			}
 
-			$Result = "";
 			// Eintraege ausgeben
 			$HTML = '<table>';
 			foreach ($out as $value) {
