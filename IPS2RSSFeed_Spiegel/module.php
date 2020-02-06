@@ -107,16 +107,17 @@
         				'image'        => (string) $item->enclosure['url']				);
 			}
 
-			$Result = "";
 			// Eintraege ausgeben
+			$HTML = '<table>';
 			foreach ($out as $value) {
 				$Title = '<h3>'.$value['title'].'</h3>';
     				$Discription = '<p>'.$value['description'].'</p>';
     				$Image = '<img src='.$value['image'].'>';
-				$Result = $Result.$Title.$Discription.$Image."\r\n";
+				$HTML .= '<tr>'.'<td>'.$Title.$Discription.$Image.'</td>'.'</tr>';
 			}
-			If ($Result <> GetValueString($this->GetIDForIdent("RSSFeed"))) {
-				SetValueString($this->GetIDForIdent("RSSFeed"), $Result);
+			$HTML .= '</table>';
+			If ($HTML <> GetValueString($this->GetIDForIdent("RSSFeed"))) {
+				SetValueString($this->GetIDForIdent("RSSFeed"), $HTML);
 			}
 		}
 	}
