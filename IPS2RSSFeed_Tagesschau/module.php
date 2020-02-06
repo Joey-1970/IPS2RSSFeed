@@ -110,14 +110,15 @@
 				);
 			}
 
-			$Result = "";
 			// Eintraege ausgeben
+			$HTML = '<table>';
 			foreach ($out as $value) {
 				$Title = '<h3>'.$value['title'].'</h3>';
-				$Result = $Result.$Title.$value['encoded_content']."\r\n";
+				$HTML .= '<tr>'.'<td>'.$Title.$value['encoded_content'].'</td>'.'</tr>';
 			}
-			If ($Result <> GetValueString($this->GetIDForIdent("RSSFeed"))) {
-				SetValueString($this->GetIDForIdent("RSSFeed"), $Result);
+			$HTML .= '</table>';
+			If ($HTML <> GetValueString($this->GetIDForIdent("RSSFeed"))) {
+				SetValueString($this->GetIDForIdent("RSSFeed"), $HTML);
 			}
 		}
 	}
