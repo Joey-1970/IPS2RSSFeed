@@ -1,6 +1,6 @@
 <?
     // Klassendefinition
-    class IPS2RSSFeed_Spiegel extends IPSModule 
+    class IPS2RSSFeed_Postillion extends IPSModule 
     {
 	public function Destroy() 
 	{
@@ -17,7 +17,7 @@
 		$this->RegisterPropertyBoolean("Active", false);
 		$this->RegisterPropertyInteger("MessageCount", 2);
 		$this->RegisterPropertyInteger("Timer_1", 10);
-		$this->RegisterTimer("Timer_1", 0, 'IPS2RSSFeedSpiegel_GetDataUpdate($_IPS["TARGET"]);');
+		$this->RegisterTimer("Timer_1", 0, 'IPS2RSSFeedPostillion_GetDataUpdate($_IPS["TARGET"]);');
 
 		// Status-Variablen anlegen		
 		$this->RegisterVariableString("RSSFeed", "RSS-Feed Spiegel", "~HTMLBox", 10);
@@ -78,7 +78,7 @@
 			$this->SendDebug("GetDataUpdate", "Ausfuehrung", 0);
 			$MessageCount = $this->ReadPropertyInteger("MessageCount");
 			// Feed einlesen
-			if( !$xml = simplexml_load_file('https://www.spiegel.de/schlagzeilen/index.rss') ) {
+			if( !$xml = simplexml_load_file('http://feeds.feedburner.com/blogspot/rkEL') ) {
     				$this->SendDebug("GetDataUpdate", "Fehler beim Einlesen der XML Datei!", 0);
 				return;
 			}
@@ -103,20 +103,21 @@
 
 				$out[] = array(
 					'title'        => (string) $item->title,
-					'description'  => (string) $item->description,
-        				'image'        => (string) $item->enclosure['url']				);
+					'description'  => (string) $item->description			
+				);
 			}
 
 			$Result = "";
 			// Eintraege ausgeben
+			$HTML = '<table>';
 			foreach ($out as $value) {
-				$Title = '<h3>'.$value['title'].'</h3>';
+    				$Title = '<h3>'.$value['title'].'</h3>';
     				$Discription = '<p>'.$value['description'].'</p>';
-    				$Image = '<img src='.$value['image'].'>';
-				$Result = $Result.$Title.$Discription.$Image."\r\n";
+				$HTML .= '<tr>'.'<td>'.$Title.$Discription.'</td>'.'</tr>';
 			}
-			If ($Result <> GetValueString($this->GetIDForIdent("RSSFeed"))) {
-				SetValueString($this->GetIDForIdent("RSSFeed"), $Result);
+			$HTML .= '</table>';
+			If ($HTML <> GetValueString($this->GetIDForIdent("RSSFeed"))) {
+				SetValueString($this->GetIDForIdent("RSSFeed"), $HTML);
 			}
 		}
 	}
