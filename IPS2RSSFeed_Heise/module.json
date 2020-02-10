@@ -1,0 +1,14 @@
+{
+  "id": "{84C8AE80-57FC-1567-AD9E-3CC3CF7C500E}",
+  "name": "IPS2RSSFeed_Heise",
+  "type": 3,
+  "vendor": "JP-IPS-Modules",
+  "aliases":
+  [
+    "IPS2RSSFeed_Heise"
+  ],
+  "parentRequirements": [],
+  "childRequirements": [],
+  "implemented": [],
+  "prefix": "IPS2RSSFeedHeise"
+}
