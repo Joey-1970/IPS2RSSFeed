@@ -13,7 +13,7 @@
 		$this->RegisterTimer("Timer_1", 0, 'IPS2RSSFeedWelt_GetDataUpdate($_IPS["TARGET"]);');
 
 		// Status-Variablen anlegen		
-		$this->RegisterVariableString("RSSFeed", "RSS-Feed Spiegel", "~HTMLBox", 10);
+		$this->RegisterVariableString("RSSFeed", "RSS-Feed Welt", "~HTMLBox", 10);
 		
         }
  	
