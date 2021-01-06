@@ -1,0 +1,14 @@
+{
+  "id": "{614875A9-9DF3-32EB-37C1-E76ED7C4897F}",
+  "name": "IPS2RSSFeed_AutoMotorSport",
+  "type": 3,
+  "vendor": "JP-IPS-Modules",
+  "aliases":
+  [
+    "IPS2RSSFeed_AutoMotorSport"
+  ],
+  "parentRequirements": [],
+  "childRequirements": [],
+  "implemented": [],
+  "prefix": "IPS2RSSFeedAutoMotorSport"
+}
