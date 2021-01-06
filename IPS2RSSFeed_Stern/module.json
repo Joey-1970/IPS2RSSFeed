@@ -1,0 +1,14 @@
+{
+  "id": "{F6EFA046-7A9E-A65A-30A1-05F1B526148F}",
+  "name": "IPS2RSSFeed_Stern",
+  "type": 3,
+  "vendor": "JP-IPS-Modules",
+  "aliases":
+  [
+    "IPS2RSSFeed_Stern"
+  ],
+  "parentRequirements": [],
+  "childRequirements": [],
+  "implemented": [],
+  "prefix": "IPS2RSSFeedStern"
+}
