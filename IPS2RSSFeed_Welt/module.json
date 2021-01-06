@@ -1,0 +1,14 @@
+{
+  "id": "{D15F9F28-5AD5-7C4D-2A76-B48785C5795E}",
+  "name": "IPS2RSSFeed_Welt",
+  "type": 3,
+  "vendor": "JP-IPS-Modules",
+  "aliases":
+  [
+    "IPS2RSSFeed_Welt"
+  ],
+  "parentRequirements": [],
+  "childRequirements": [],
+  "implemented": [],
+  "prefix": "IPS2RSSFeedWelt"
+}
