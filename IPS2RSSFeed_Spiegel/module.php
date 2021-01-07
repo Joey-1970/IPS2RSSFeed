@@ -101,7 +101,7 @@
         				'image'        => (string) $item->enclosure['url']				);
 			}
 
-			/$Width = $this->ReadPropertyInteger("Width");
+			$Width = $this->ReadPropertyInteger("Width");
 			// Eintraege ausgeben
 			$HTML = '<style type="text/css">';
 			$HTML .= '<link rel="stylesheet" href="./.../webfront.css">';
