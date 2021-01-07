@@ -126,8 +126,8 @@
     				$HTML .= '</tr>';
 			}
 			$HTML .= '</table>';
-			If ($HTML <> GetValueString($this->GetIDForIdent("RSSFeed"))) {
-				SetValueString($this->GetIDForIdent("RSSFeed"), $HTML);
+			If ($HTML <> $this->GetValue("RSSFeed")) {
+				$this->SetValue("RSSFeed", $HTML);
 			}
 		}
 	}
