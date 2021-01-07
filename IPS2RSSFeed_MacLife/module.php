@@ -10,6 +10,7 @@
 		$this->RegisterPropertyBoolean("Active", false);
 		$this->RegisterPropertyInteger("MessageCount", 2);
 		$this->RegisterPropertyInteger("Timer_1", 10);
+		$this->RegisterPropertyInteger("Width", 700);
 		$this->RegisterTimer("Timer_1", 0, 'IPS2RSSFeedMacLife_GetDataUpdate($_IPS["TARGET"]);');
 
 		// Status-Variablen anlegen		
@@ -28,7 +29,8 @@
 		$arrayElements = array(); 
 		$arrayElements[] = array("type" => "CheckBox", "name" => "Active", "caption" => "Aktiv");
 		$arrayElements[] = array("type" => "Label", "label" => "Anzahl der anzuzeigenden Nachrichten");
-		$arrayElements[] = array("type" => "IntervalBox", "name" => "MessageCount", "caption" => "Anzahl");
+		$arrayElements[] = array("type" => "NumberSpinner", "name" => "MessageCount", "caption" => "Anzahl", "minimum" => 1, "maximum" => 20);
+		$arrayElements[] = array("type" => "NumberSpinner", "name" => "Width",  "caption" => "Tabellenbreite", "minimum" => 400, "maximum" => 1000, "suffix" => "px");
 		$arrayElements[] = array("type" => "Label", "label" => "Aktualisierung");
 		$arrayElements[] = array("type" => "IntervalBox", "name" => "Timer_1", "caption" => "min");
 		$arrayElements[] = array("type" => "Label", "label" => "_____________________________________________________________________________________________________");
@@ -99,14 +101,30 @@
 					'description'  => (string) $item->description,
         				'image'        => (string) $item->enclosure['url']				);
 			}
-
+			
+			$Width = 0;
 			// Eintraege ausgeben
-			$HTML = '<table>';
+			$HTML = '<style type="text/css">';
+			$HTML .= '<link rel="stylesheet" href="./.../webfront.css">';
+			$HTML .= "</style>";
+			$HTML .= '<table class="tg">';
 			foreach ($out as $value) {
-				$Title = '<h3>'.$value['title'].'</h3>';
-    				$Discription = '<p>'.$value['description'].'</p>';
-    				$Image = '<img src='.$value['image'].'>';
-				$HTML .= '<tr>'.'<td>'.$Title.$Discription.$Image.'</td>'.'</tr>';
+     				$HTML .= '<tr>';
+     					$HTML .= '<td class="tg-611x" width=700 ><h3>'.$value['title'].'</h3></td>';
+    				$HTML .= '</tr>';
+     				
+				$HTML .= '<tr>';
+    					$Image = '<img src='.$value['image'].' style="width:700px;">';
+    					$HTML .= '<td class="tg-611x">'.$Image.'</td>';
+    				$HTML .= '</tr>';
+
+     				$HTML .= '<tr>';
+    					$HTML .= '<td class="tg-611x" width=700;word-break:break-word; >'.$value['description'].'</td>';
+    				$HTML .= '</tr>';
+
+     				$HTML .= '<tr>';
+    					$HTML .= '<td class="tg-611x" height=25; ></td>';
+    				$HTML .= '</tr>';
 			}
 			$HTML .= '</table>';
 			If ($HTML <> GetValueString($this->GetIDForIdent("RSSFeed"))) {
