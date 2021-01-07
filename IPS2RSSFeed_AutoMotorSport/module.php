@@ -28,8 +28,7 @@
 				
 		$arrayElements = array(); 
 		$arrayElements[] = array("type" => "CheckBox", "name" => "Active", "caption" => "Aktiv");
-		$arrayElements[] = array("type" => "Label", "label" => "Anzahl der anzuzeigenden Nachrichten");
-		$arrayElements[] = array("type" => "NumberSpinner", "name" => "MessageCount", "caption" => "Anzahl", "minimum" => 1, "maximum" => 20);
+		$arrayElements[] = array("type" => "NumberSpinner", "name" => "MessageCount", "caption" => "Anzahl der anzuzeigenden Nachrichten", "minimum" => 1, "maximum" => 20);
 		$arrayElements[] = array("type" => "NumberSpinner", "name" => "Width",  "caption" => "Tabellenbreite", "minimum" => 400, "maximum" => 1000, "suffix" => "px");
 		$arrayElements[] = array("type" => "NumberSpinner", "name" => "Timer_1",  "caption" => "Aktualisierung", "minimum" => 1, "maximum" => 600, "suffix" => "min");
 		$arrayElements[] = array("type" => "Label", "label" => "_____________________________________________________________________________________________________");
