@@ -1,0 +1,14 @@
+{
+  "id": "{69AE08B1-BAE6-CE04-A0EE-C0662B5D19DB}",
+  "name": "IPS2RSSFeed_MacLife",
+  "type": 3,
+  "vendor": "JP-IPS-Modules",
+  "aliases":
+  [
+    "IPS2RSSFeed_MacLife"
+  ],
+  "parentRequirements": [],
+  "childRequirements": [],
+  "implemented": [],
+  "prefix": "IPS2RSSFeedMacLife"
+}
