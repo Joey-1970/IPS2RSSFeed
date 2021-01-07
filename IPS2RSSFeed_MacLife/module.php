@@ -102,7 +102,7 @@
         				'image'        => (string) $item->enclosure['url']				);
 			}
 			
-			$Width = 0;
+			$Width = $this->ReadPropertyInteger("Width");
 			// Eintraege ausgeben
 			$HTML = '<style type="text/css">';
 			$HTML .= '<link rel="stylesheet" href="./.../webfront.css">';
@@ -110,16 +110,16 @@
 			$HTML .= '<table class="tg">';
 			foreach ($out as $value) {
      				$HTML .= '<tr>';
-     					$HTML .= '<td class="tg-611x" width=700 ><h3>'.$value['title'].'</h3></td>';
+     					$HTML .= '<td class="tg-611x" width='.$Width.' ><h3>'.$value['title'].'</h3></td>';
     				$HTML .= '</tr>';
      				
 				$HTML .= '<tr>';
-    					$Image = '<img src='.$value['image'].' style="width:700px;">';
+    					$Image = '<img src='.$value['image'].' style="width:'.$Width.'px;">';
     					$HTML .= '<td class="tg-611x">'.$Image.'</td>';
     				$HTML .= '</tr>';
 
      				$HTML .= '<tr>';
-    					$HTML .= '<td class="tg-611x" width=700;word-break:break-word; >'.$value['description'].'</td>';
+    					$HTML .= '<td class="tg-611x" width='.$Width.';word-break:break-word; >'.$value['description'].'</td>';
     				$HTML .= '</tr>';
 
      				$HTML .= '<tr>';
