@@ -128,10 +128,6 @@
         				$HTML .= '</tr>';
      				}
      				
-				$HTML .= '<tr>';
-    					$HTML .= '<td class="tg-611x" width='.$Width.';word-break:break-word; >'.$value['description'].'</td>';
-    				$HTML .= '</tr>';
-
      				$HTML .= '<tr>';
     					$HTML .= '<td class="tg-611x" height=25; ></td>';
     				$HTML .= '</tr>';
