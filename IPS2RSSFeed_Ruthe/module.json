@@ -1,0 +1,14 @@
+{
+  "id": "{E3BA3599-08B9-6A85-009A-569DFA790559}",
+  "name": "IPS2RSSFeed_Ruthe",
+  "type": 3,
+  "vendor": "JP-IPS-Modules",
+  "aliases":
+  [
+    "IPS2RSSFeed_Ruthe"
+  ],
+  "parentRequirements": [],
+  "childRequirements": [],
+  "implemented": [],
+  "prefix": "IPS2RSSFeedRuthe"
+}
