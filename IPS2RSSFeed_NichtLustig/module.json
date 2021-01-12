@@ -1,0 +1,14 @@
+{
+  "id": "{050BE05B-96C7-66B9-349F-2E2692F8012B}",
+  "name": "IPS2RSSFeed_NichtLustig",
+  "type": 3,
+  "vendor": "JP-IPS-Modules",
+  "aliases":
+  [
+    "IPS2RSSFeed_NichtLustig"
+  ],
+  "parentRequirements": [],
+  "childRequirements": [],
+  "implemented": [],
+  "prefix": "IPS2RSSFeedNichtLustig"
+}
