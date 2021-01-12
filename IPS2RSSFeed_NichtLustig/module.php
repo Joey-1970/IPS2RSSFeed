@@ -14,7 +14,7 @@
 		$this->RegisterTimer("Timer_1", 0, 'IPS2RSSFeedNichtLustig_GetDataUpdate($_IPS["TARGET"]);');
 
 		// Status-Variablen anlegen		
-		$this->RegisterVariableString("RSSFeed", "RSS-Feed Ruthe", "~HTMLBox", 10);
+		$this->RegisterVariableString("RSSFeed", "RSS-Feed NichtLustig", "~HTMLBox", 10);
 		
         }
  	
