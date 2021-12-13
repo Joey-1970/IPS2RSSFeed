@@ -44,7 +44,6 @@
             	// Diese Zeile nicht löschen
             	parent::ApplyChanges();
 		$this->SetStatus(102);
-		$this->RegisterMessage($this->InstanceID, 10103);
 	
 		if ($this->ReadPropertyBoolean("Active") == true) {
 			$this->GetDataUpdate();
@@ -54,16 +53,6 @@
 			$this->SetTimerInterval("Timer_1", 0);
 		}
 	}
-	
-	public function MessageSink($TimeStamp, $SenderID, $Message, $Data)
-    	{
- 		switch ($Message) {
-			case 10103:
-				$this->ApplyChanges();
-				break;
-			
-		}
-    	}
 	    
 	// Beginn der Funktionen
 	public function GetDataUpdate()
