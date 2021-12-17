@@ -42,13 +42,18 @@
         {
             	// Diese Zeile nicht löschen
             	parent::ApplyChanges();
-		$this->SetStatus(102);
-
+	
 		if ($this->ReadPropertyBoolean("Active") == true) {
+			If ($this->GetStatus() <> 102) {
+				$this->SetStatus(102);
+			}
 			$this->GetDataUpdate();
 			$this->SetTimerInterval("Timer_1", $this->ReadPropertyInteger("Timer_1") * 60 * 1000);
 		}
 		else {
+			If ($this->GetStatus() <> 104) {
+				$this->SetStatus(104);
+			}
 			$this->SetTimerInterval("Timer_1", 0);
 		}
 	}
